@@ -1,0 +1,954 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- font awesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <!-- hover effect -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.2/css/bootstrap.min.css" integrity="sha512-fzgbboB1wEanpwugmWkmqlpXtYeiYtI/iQrJxLn3AqUVaGOFliIwDyRlA1k8OcXPLl+07BojQ2xJZgsRe3tJEA==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <!-- moving effect to the image -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- typing effect to the text -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="typed.js"></script>
+    <title>major project</title>
+</head>
+<style>
+    * {
+        padding: 0px;
+        margin: 0px;
+        box-sizing: border-box;
+        font-family: 'poppins', sans-serif;
+    }
+    
+    #scroll-to-top-button {
+        display: none;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 99;
+        font-size: 18px;
+        border: none;
+        outline: none;
+        background-color: #0893a5;
+        color: white;
+        cursor: pointer;
+        padding: 20px;
+        border-radius: 2px;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+    }
+    
+    #scroll-to-top-button:hover {
+        background-color: #077481;
+    }
+    
+    @media (max-width: 767px) {
+        #scroll-to-top-button {
+            bottom: 20px;
+            right: 20px;
+            cursor: pointer;
+        }
+    }
+    
+    .quick {
+        background-color: rgb(10, 165, 10);
+        display: block;
+    }
+    
+    @media (max-width: 1139.98px) {
+        .quick .container {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+    
+    .navbar {
+        font-family: 'Roboto', sans-serif;
+        /* font-size: 20px; */
+        font-weight: bold;
+    }
+    
+    .navbar-nav .nav-item a:hover {
+        text-decoration: underline;
+        color: rgb(12, 221, 82);
+    }
+    
+    .container-fluid .container .row .col .card:hover {
+        /* background-color: rgb(34, 192, 184); */
+        color: #053b3d;
+        /* transition: background-color 2s ease; */
+        transform: scale(1.02);
+        /* transition: transform 1.005s ease; */
+    }
+    
+    h1 .text {
+        color: rgb(17, 75, 60);
+        font-weight: bolder;
+        font-size: 50px;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    }
+    
+    .navbar .container-fluid .collapse ul li .container {
+        display: none;
+    }
+    
+    .navbar .container-fluid .collapse ul li #about.container {
+        position: realtive;
+        z-index: 1;
+    }
+    
+    .navbar .container-fluid .collapse .row .col .inform p {
+        font-weight: lighter;
+    }
+    
+    .navbar .container-fluid .collapse .row .col .inform h6 {
+        font-weight: bold;
+        padding: 10px 2px;
+    }
+    
+    .navbar .container-fluid .collapse ul li:hover .container {
+        position: absolute;
+        background-color: rgb(214, 216, 218);
+        /* top: 50px; */
+        left: 50px;
+        z-index: 2;
+        display: block;
+    }
+    
+    @media (max-width: 575.98px) {
+        .navbar .container-fluid .collapse ul li:hover .container {
+            position: static;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+    }
+    
+    @media (max-width: 1139.98px) {
+        .modal .container {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+    
+    .social-icons {
+        font-size: 30px;
+    }
+    
+    .social-icons li {
+        list-style-type: none;
+        color: white;
+    }
+    
+    .social-icons .fa-brands {
+        color: rgb(6, 65, 80);
+    }
+</style>
+
+<body>
+
+    <!-- navbar started -->
+
+    <!-- add fixed-top for sticky purpose -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><img src="images/logo.png " height="50px " width="100px "></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item ">
+                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" id="about" href="# ">About Us</a>
+
+                        <!-- adding extra class on adding eventlistener -->
+                        <div class="container text-center" id="container">
+                            <div class=" row ">
+                                <div class="col " style="margin:4px;padding:10px 8px;border-right:1px solid grey; ">
+                                    <div class="inform ">
+                                        <h6 style="margin:1px 3px;">
+                                            <a href="intro.html"> Introduction</a> </h6>
+                                        <p>S.A.I.T Solution and Trade Concern is a revenue-based project company specializing in the IT sector.</p>
+                                    </div>
+
+
+                                </div>
+                                <div class="col " style="margin:4px;padding:10px 8px;border-right:1px solid grey; ">
+                                    <div class="inform ">
+                                        <h6 class="work" style="margin:1px 3px; ">
+                                            <a href="work.html"> How we work</a>
+                                        </h6>
+                                        <p>S.A.I.T Solution and Trade Concern works as group in different sectors.</p>
+                                    </div>
+                                </div>
+                                <div class="col " style="margin:4px;padding:10px 8px;border-right:1px solid grey; ">
+                                    <div class="inform ">
+                                        <h6 class="activity" style="margin:1px 3px; ">
+                                            <a href="activities.html"> Our Activities</a>
+                                        </h6>
+                                        <p>S.A.I.T Solution and Trade Concern provides various services in different It fields</p>
+                                    </div>
+                                </div>
+                                <div class="col " style="margin:4px;padding:10px 8px; ">
+                                    <div class="inform ">
+                                        <h6 class="team" style="margin:1px 3px; ">
+                                            <a href="team.html"> Our Team</a>
+                                        </h6>
+                                        <p>S.A.I.T Solution and Trade Concern has great energetic, creative ,highly enthaustic employee working in different sectors.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ending  adding extra class on adding eventlistener -->
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="service.html ">Service</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link " href="port.html">Portfolio</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link " href="contact.html" tabindex="-1 ">Contact Us</a>
+                    </li>
+                    <!-- <li class="nav-item ">
+                        <a class="nav-link disabled " href="# " tabindex="-1 " aria-disabled="true ">Disabled</a>
+                    </li> -->
+                </ul>
+                <form class="d-flex ">
+                    <!-- <input class=" form-control me-2 " type="search " placeholder="Search " aria-label="Search "> -->
+                    <button class="btn btn-outline-success" data-bs-target="#mymodal" data-bs-toggle="modal" type="button">Quick Enquiry</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <!-- navbar ended -->
+
+    <!-- quick button display and hide -->
+    <!-- Modal -->
+    <div class="modal fade" id="mymodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" style="max-width:95%">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <!-- <h5 class="modal-title" id="exampleModalLabel">Modal title</h5> -->
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="container d-flex">
+
+                        <div class="container ">
+                            <div class="row " style="flex-direction:column; ">
+                                <p>WE WOULD LOVE TO HEAR FROM YOUR---</p>
+                                <h4>GET IN TOUCH</h4>
+                                <div class=" col-md-6 d-flex align-items-center " style="margin-bottom:20px;padding-bottom:20px; ">
+                                    <i class=" fa-solid fa-location-dot " style=" font-size: xx-large; border:2px solid rgb(3, 114, 49); padding:10px 12px; "></i>
+                                    <address style="display:flex;flex-direction:column;margin-bottom:0px;margin-left:6px;border-bottom:1px solid grey; ">
+                                    <strong>Office Address</strong>
+                                    <p>0 K.M, Pokhar, Nepal</p>
+                                </address>
+                                </div>
+                                <div class=" col-md-6 d-flex align-items-center " style=" margin-bottom:20px;padding-bottom:20px; ">
+                                    <i class=" fa-solid fa-envelope " style=" font-size: xx-large; border:2px solid rgb(3, 114, 49); padding:10px 12px; "></i>
+                                    <address style="display:flex;flex-direction:column;margin-bottom:0px; margin-left:6px;border-bottom:1px solid grey; ">
+                                    <strong>For Sales & Quotation Requests</strong>
+                                    <p>info@sait.com.np</p>
+                                </address>
+                                </div>
+                                <div class=" col-md-6 d-flex align-items-center " style="margin-bottom:20px;padding-bottom:20px; ">
+                                    <i class=" fa-solid fa-phone-volume " style=" font-size: xx-large; border:2px solid rgb(3, 114, 49); padding:10px 12px; "></i>
+                                    <address style="display:flex;flex-direction:column;margin-bottom:0px; margin-left:6px;border-bottom:1px solid grey; ">
+                                    <strong>For Sales & Quotation Requests</strong>
+                                    <p>+9779801067391, +9779802835022,</p>
+                                </address>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- form started here -->
+                        <form action=" ">
+                            <div class="form ">
+                                <div class="texts " style="justify-content: center;align-items:center; ">
+                                    <h5 style="font-weight: bold; ">HAVE A PROJECT IN MIND?---</h5>
+                                    <h3>Tell Us
+                                        <span style="color:rgb(3, 114, 49);font-family: 'Shrikhand', cursive; font-weight: light; ">A Bit More.</span>
+                                    </h3>
+                                </div>
+                                <div class="row " style="margin:10px 5px; ">
+                                    <div class="col ">
+                                        <input type="text " class="form-control " placeholder="First name " aria-label="First name ">
+                                    </div>
+                                    <div class="col ">
+                                        <input type="text " class="form-control " placeholder="Last name " aria-label="Last name ">
+                                    </div>
+                                </div>
+                                <div class="row " style="margin:10px 5px; ">
+                                    <div class="col ">
+                                        <input type="number " class="form-control " placeholder="Number " aria-label="Number ">
+                                    </div>
+                                    <div class="col ">
+                                        <input type="email " class="form-control " placeholder="email " aria-label="Email ">
+                                    </div>
+                                </div>
+                                <div class="row " style="margin:10px 5px; ">
+                                    <div class="col ">
+                                        <input type="text " class="form-control " placeholder="Address " aria-label="address ">
+                                    </div>
+                                    <div class="col ">
+                                        <input type="text " class="form-control " placeholder="Your Interest " aria-label="interest ">
+                                    </div>
+                                </div>
+                                <div class="mb-3 ">
+
+                                    <textarea class="form-control " placeholder="Write a Message... " id="exampleFormControlTextarea1 " rows="5 "></textarea>
+                                </div>
+
+                            </div>
+                            <div class="submitbtn " style="align-items:center;display:flex;justify-content: center;text-align:center; ">
+                                <button type="button" class="btn btn-primary">Submit</button>
+                            </div>
+                        </form>
+                        <!-- form ended here -->
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- quick enquiry button display and hide -->
+
+
+
+    <!-- image background with masking effect -->
+    <!-- start of middle portion -->
+    <section class="pt-4 pt-md-11 " style="margin-top:76px; background-image: url( 'images/ggg.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center; height: 100vh; ">
+        <div class=" container ">
+            <div class="row align-items-center ">
+                <div class="col-12 col-md-5 col-lg-6 order-md-2 ">
+
+                    <!-- Image -->
+                    <div data-aos="fade-down-left ">
+                        <img src="images/clip5.png " class="img-fluid "> </div>
+                </div>
+                <div class="col-12 col-md-7 col-lg-6 order-md-1 aos-init aos-animate ">
+                    <div data-aos="fade-down-right ">
+                        <!-- Heading -->
+                        <h1 class="display-3 text-center text-md-start " style="font-size:30px;color:rgb(29, 28, 28); ">
+                            Welcome to
+                            <span class="text "></span> <br>
+                        </h1>
+
+                        <!-- Text -->
+                        <p class="lead text-center text-md-start mb-6 mb-lg-8 " style="color:rgb(29, 28, 28);margin-top:10px; margin-bottom: 1rem; ">
+                            Build a beautiful, modern website with flexible Bootstrap components built from scratch. You Dream We Code...
+                        </p>
+
+                        <!-- Buttons -->
+                        <div class=" text-center text-md-start ">
+                            <a href="overview.html " class="btn btn-primary shadow lift me-1 ">
+                  Contact Us <i class="fe fe-arrow-right d-none d-md-inline ms-3 "></i>
+                </a>
+                            <!-- <a href="docs/index.html " class="btn btn-primary-soft lift ">
+                  Documentation
+                </a> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- / .row -->
+        </div>
+        <!-- / .container -->
+    </section>
+    <!-- end of middle portion -->
+    <!-- </class> -->
+    <!-- imagemask closed -->
+
+
+
+
+    <!-- images and description -->
+    <!-- first row -->
+    <div class="container-fluid " style="background-color: rgb(214, 216, 218);padding:10px; ">
+        <div class="container " style="margin-bottom:20px; ">
+
+            <div data-aos="flip-up ">
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 flex-wrrap ">
+                    <div class="col ">
+                        <div class=" card shadow-sm h-100 " style="background-color: rgb(214, 216, 218); ">
+
+                            <img src="images/digi.png " style="height:40px;width:40px;margin:10px; ">
+                            <h4 style="margin:10px;font-weight: bold; ">Digital Marketting
+                            </h4>
+                            <div class="card-body ">
+                                <p class="card-text ">S.A.I.T. also provide quality domain registration and register both domestic and international domains. Additionally, we provide reliable hosting and domain transfer services, as well as domain name sales and brand-new
+                                    domain registration.</p>
+                                <div class="d-flex justify-content-between align-items-center ">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col ">
+
+                        <div class="card shadow-sm h-100 " style="background-color: rgb(214, 216, 218); ">
+
+                            <img src="images/app.png " style="height:40px;width:40px;margin:10px; ">
+                            <h4 style="margin:10px;font-weight: bold; ">Mobile App Development
+                            </h4>
+                            <div class="card-body ">
+                                <p class="card-text ">Every business and organization requires a well-presented mobile application that highlights their unique selling point to their target audience. A well-designed application is in charge of consumer attraction, activity,
+                                    an retention.d S.A I.T Solution and Trade Concern creates personalized apps with original content, graphics, photos, and animations, to ensure your app stands out from the crowd.
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center ">
+                                    <!-- <div class="btn-group ">
+                                <button type="button " class="btn btn-sm btn-outline-secondary ">View</button>
+                                <button type="button " class="btn btn-sm btn-outline-secondary ">Edit</button>
+                            </div>
+                            <small class="text-muted ">9 mins</small> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col ">
+
+                        <div class="card shadow-sm h-100 " style="background-color: rgb(214, 216, 218); ">
+
+
+                            <img src="images/social.png " style="height:40px;width:40px;margin:10px; ">
+                            <h4 style="margin:10px;font-weight: bold; ">Social Media Marketting
+                            </h4>
+                            <div class="card-body ">
+                                <p class="card-text ">Our online marketing team has the best digital marketers who are experienced in developing digital strategies to increase your Facebook/ Instagram page likes and followers, create engaging contents about products and services
+                                    that reach a wide audience, and help generate both business exposure and sales.
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center ">
+                                    <!-- <div class="btn-group ">
+                                <button type="button " class="btn btn-sm btn-outline-secondary ">View</button>
+                                <button type="button " class="btn btn-sm btn-outline-secondary ">Edit</button>
+                            </div>
+                            <small class="text-muted ">9 mins</small> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- first row ended -->
+
+
+        <!-- second row -->
+        <div class="container " style="margin-bottom:20px; ">
+
+
+            <div data-aos="flip-down ">
+                <div class=" row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 flex-wrap ">
+                    <div class="col ">
+                        <div class="card shadow-sm h-100 " style="background-color: rgb(214, 216, 218); ">
+                            <img src="images/seo.png " style="height:40px;width:40px;margin:10px; ">
+                            <h4 style="margin:10px;font-weight: bold; ">SEO in Nepal
+                            </h4>
+                            <div class="card-body ">
+                                <p class="card-text ">We provide IT infrastructure. We offer timely maintenance and upkeep of machinery, IT hardware, and software, including Microsoft Windows, to support your productive operation. We offer desktop PC deployment, repair, and
+                                    upgrade services so you may replace your outdated computers with newer, faster ones without having to spend a fortune on new office computers and IT equipment.</p>
+                                <div class="d-flex justify-content-between align-items-center ">
+                                    <!-- <div class="btn-group ">
+                                <button type="button " class="btn btn-sm btn-outline-secondary ">View</button>
+                                <button type="button " class="btn btn-sm btn-outline-secondary ">Edit</button>
+                            </div> -->
+                                    <!-- <small class="text-muted ">9 mins</small> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col ">
+                        <div class="card shadow-sm h-100 " style="background-color: rgb(214, 216, 218); ">
+                            <img src="images/cnt.png " style="height:40px;width:40px;margin:10px; ">
+                            <h4 style="margin:10px;font-weight: bold; ">Content Writing
+                            </h4>
+                            <div class="card-body ">
+                                <p class="card-text ">With the always evolving technical aspects of the IT world, organizations will not be able to focus both on developing their businesses and working to comply with new technical advancements. Moreover, it is a must to be
+                                    technically fit to capture today’s competitive market. In such scenarios, S.A I.T Solution and Trade Concern is here to help.</p>
+                                <div class="d-flex justify-content-between align-items-center ">
+                                    <!-- <div class="btn-group ">
+                                <button type="button " class="btn btn-sm btn-outline-secondary ">View</button>
+                                <button type="button " class="btn btn-sm btn-outline-secondary ">Edit</button>
+                            </div> -->
+                                    <!-- <small class="text-muted ">9 mins</small> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col ">
+                        <div class="card shadow-sm h-100 " style="background-color: rgb(214, 216, 218); ">
+                            <img src="images/webre.png " style="height:40px;width:40px;margin:10px; ">
+                            <h4 style="margin:10px;font-weight: bold; ">Web Redesign
+                            </h4>
+                            <div class="card-body ">
+                                <p class="card-text "> A well-designed website is in charge of consumer attraction, activity, and retention. S.A I.T Solution and Trade Concern creates personalized websites with original content, graphics, photos, and animations, as well as
+                                    domain name registration, to ensure your website stands out from the crowd.
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center ">
+                                    <!-- <div class="btn-group ">
+                                <button type="button " class="btn btn-sm btn-outline-secondary ">View</button>
+                                <button type="button " class="btn btn-sm btn-outline-secondary ">Edit</button>
+                            </div> -->
+                                    <!-- <small class="text-muted ">9 mins</small> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- second row ended -->
+    </div>
+    <!-- images and description completed-->
+
+
+    <!-- carousel effect with image and text... -->
+    <div data-aos="flip-left ">
+        <div id="carouselExampleAutoplaying " class="carousel slide " data-bs-ride="carousel ">
+
+            <div class="carousel-inner ">
+                <!-- <div class="carousel-item active ">
+                <img src="images/nature1.jpg " class="d-block w-100 h-500 " alt="... ">
+            </div> -->
+                <div class="carousel-item active ">
+                    <div class="mask " style="background-color: hsla(0, 0%, 0%, 0.6) "><img src="images/nature2.jpg " class="d-block w-100 " alt="... " style="max-height:80vh; "></div>
+
+                </div>
+                <div class="carousel-item ">
+                    <img src="images/nature3.jpg " class="d-block w-100 h-20 " alt="... " style="max-height:80vh; ">
+                </div>
+                <div class="carousel-item ">
+                    <img src="images/nature4.jpg " class="d-block w-100 h-20 " alt="... " style="max-height:80vh; ">
+                </div>
+            </div>
+            <button class="carousel-control-prev " type="button " data-bs-target="#carouselExampleAutoplaying " data-bs-slide="prev ">
+          <span class="carousel-control-prev-icon " aria-hidden="true "></span>
+          <span class="visually-hidden ">Previous</span>
+        </button>
+            <button class="carousel-control-next " type="button " data-bs-target="#carouselExampleAutoplaying " data-bs-slide="next ">
+          <span class="carousel-control-next-icon " aria-hidden="true "></span>
+          <span class="visually-hidden ">Next</span>
+        </button>
+        </div>
+    </div>
+    <!-- carousel effect is done with image and text... -->
+
+
+
+    <!-- section with logo and name -->
+    <section style="background-color: rgb(209, 206, 201); padding:10px 5px; ">
+        <div data-aos="fade-down " data-aos-anchor-placement="center-bottom ">
+            <div class="d-flex flex-column align-items-center text-center " style="padding-top:30px; ">
+                <h6>-----GLOBALLY RECOGNIZED-----</h6>
+                <h3 style=" font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ">Trusted By Renowned <span style="color:rgb(3, 133, 143);font-size:50px;font-weight: bolder; "> BRANDS</span></h3>
+                <h6>We have been providing our services to top brands building a bond of trust.</h6>
+            </div>
+        </div>
+        <!-- text completed -->
+
+        <!-- logos -->
+
+        <!-- row1 -->
+        <div data-aos="fade-down " data-aos-anchor-placement="center-bottom ">
+            <div class="container text-center ">
+                <div class="row m-2 ">
+                    <div class="col m-2 " style="box-shadow:-30px 30px 20px rgba(0,0,0,0.1);padding:10px; border-radius:10px; ">
+                        <img class="img-fluid " alt="Responsive image " src="images/adidas.png " height="80 " width="80 ">
+                    </div>
+                    <div class="col m-2 " style="box-shadow:-30px 30px 20px rgba(0,0,0,0.1);padding:10px;border-radius:10px; ">
+                        <img src="images/online-learning.png " class="img-fluid " alt="Responsive image " height="80 " width="80 ">
+                    </div>
+                    <div class="col m-2 " style=" box-shadow:-30px 30px 20px rgba(0,0,0,0.1);padding:10px;border-radius:10px; ">
+                        <img src="images/sos.png " class="img-fluid " alt="Responsive image " height="80 " width="80 ">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- row2 -->
+        <div data-aos="fade-up " data-aos-anchor-placement="center-bottom " style="margin:0px; ">
+            <div class="container text-center ">
+                <div class="row m-2 ">
+                    <div class="col m-2 " style="padding:10px; border-radius:10px; box-shadow:-30px 30px 20px rgba(0,0,0,0.1) ">
+                        <img class="img-fluid " alt="Responsive image " src="images/adidas.png " height="80 " width="80 ">
+                    </div>
+                    <div class="col m-2 " style="box-shadow:-30px 30px 20px rgba(0,0,0,0.1);padding:10px;border-radius:10px; ">
+                        <img src="images/sos.png " class="img-fluid " alt="Responsive image " height="80 " width="80 ">
+                    </div>
+                    <div class="col m-2 " style="box-shadow:-30px 30px 20px rgba(0,0,0,0.1);padding:10px;border-radius:10px; ">
+                        <img src="images/sos.png " class="img-fluid " alt="Responsive image " height="80 " width="80 ">
+                    </div>
+                    <div class="col m-2 " style="box-shadow:-30px 30px 20px rgba(0,0,0,0.1);padding:10px;border-radius:10px; ">
+                        <img src="images/online-learning.png " class="img-fluid " alt="Responsive image " height="80 " width="80 ">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- section with logo and name ended -->
+
+
+    <!-- some text after logos  also image inside the circle-->
+    <div class="container-fluid width:100% " style="background-color: rgb(214, 216, 218);margin:0px; ">
+
+        <div data-aos="fade-up " data-aos-anchor-placement="center-bottom ">
+            <div class="d-flex flex-column align-items-center text-center " style="padding-top:30px; ">
+                <h6>-----WE MAKE IT HAPPEN-----</h6>
+                <h3 style=" font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ">WORKING STEPS TO <span style="color:rgb(3, 133, 143);font-size:50px;font-weight: bolder; "> FOLLOW</span></h3>
+                <h6>We have been providing our services to top brands building a bond of trust.</h6>
+            </div>
+        </div>
+        <!-- some text after logo ends here -->
+        <!-- images and working steps -->
+        <div class="container ">
+            <div data-aos="zoom-in " data-aos-anchor-placement="center-bottom ">
+                <div class="row sm-row-cols-2 md-row-cols-4 ">
+                    <div class="col " style=" margin:2px;font-weight:bold;display:flex; flex-direction:column;justify-content: center;text-align:center; ">
+                        <div class="borderadius ">
+                            <img src="images/webrequirement.png " style="border:5px solid rgb(199, 197, 197); height:120px;width:120px; border-radius:50%;padding:15px; "> </div>
+                        <div class="step ">01</div>
+                        <div class="txt ">Gathering Requirement</div>
+                    </div>
+                    <div class="col " style=" margin:2px;font-weight:bold;display:flex; flex-direction:column;justify-content: center;text-align:center; ">
+                        <div class="borderadius ">
+                            <img src="images/design.png " style="border:5px solid rgb(199, 197, 197); height:120px;width:120px; border-radius:50%;padding:15px; "> </div>
+                        <div class=" step ">02</div>
+                        <div class="txt ">Design and Development</div>
+                    </div>
+                    <div class="col " style=" margin:2px;font-weight:bold;display:flex; flex-direction:column;justify-content: center;text-align:center; ">
+                        <div class=" borderadius ">
+                            <img src="images/qa.png " style="border:5px solid rgb(199, 197, 197); height:120px;width:120px; border-radius:50%;padding:15px; "> </div>
+                        <div class=" step ">03</div>
+                        <div class="txt ">Quality Assurance</div>
+                    </div>
+                    <div class="col " style=" margin:2px;font-weight:bold;display:flex; flex-direction:column;justify-content: center;text-align:center; ">
+                        <div class="borderadius ">
+                            <img src="images/deploy.png " style="border:5px solid rgb(199, 197, 197); height:120px;width:120px; border-radius:50%;padding:15px; "> </div>
+                        <div class=" step ">04</div>
+                        <div class="txt ">Deployment</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- images and working steps end here -->
+    </div>
+    <!-- some text after logos  and also image inside the circle ends here-->
+
+
+
+    <!-- carousel effect with name and their description -->
+
+
+
+    <div class="container-fluid " style="background-color: rgb(214, 216, 218);padding-top:30px; ">
+        <div data-aos="zoom-in-right ">
+            <div class="row " style="font-family: 'Times New Roman', Times, serif;font-weight: bold; ">
+
+                <div class="col " style="border: 2px solid grey;margin: 15px;border-radius: 10px;box-shadow:-30px 30px 20px rgba(0,0,0,0.1); ">
+                    <p>S.A.I.T is A Complete Technologies Services is the foremost accredited IT company providing managed IT services, Managed Network & Security services, Network products and ICT consultancy services which has marked its flagship in all
+                        over the country.</p>
+                    <position style="display:flex; text-align:Center;align-items:center; ">
+                        <img src=" images/qa.png " height=40px width=40px>
+                        <div class="disc " style="display:flex;flex-direction:column;margin:2px 5px ; ">
+                            <h5 style="font-weight:bold "></h5>Bhim Pd Lamichhane </h5>
+
+                            <h6>Web Page Designer</h6>
+                        </div>
+                    </position>
+                </div>
+
+
+                <div class="col " style="border: 2px solid grey;margin: 15px;border-radius: 10px;box-shadow:-30px 30px 20px rgba(0,0,0,0.1);font-family: 'Times New Roman', Times, serif;font-weight: bold; ">
+                    <p>S.A.I.T is A Complete Technologies Services is the foremost accredited IT company providing managed IT services, Managed Network & Security services, Network products and ICT consultancy services which has marked its flagship in all
+                        over the country.</p>
+                    <position style="display:flex; text-align:Center;align-items:center; ">
+                        <img src=" images/qa.png " height=40px width=40px>
+                        <div class="disc " style="display:flex;flex-direction:column;margin:2px 5px ">
+                            <h5 style="font-weight:bold "></h5>Bhim Pd Lamichhane </h5>
+
+                            <h6>Web Page Designer</h6>
+                        </div>
+                    </position>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- carousel effect with name and their description  ended here-->
+
+
+
+    <!-- section starting IDENTIFY YOUR NEEDS & PRICE -->
+
+    <section style="background-color: rgb(214, 216, 218);padding-top:40px; ">
+        <div data-aos="flip-left " data-aos-easing="ease-out-cubic " data-aos-duration="2000 ">
+            <div class=" needs " style="display:flex;justify-content: center;flex-direction:column;text-align: center;margin-bottom:20px; ">
+                <h6 style="font-weight:bold; ">---IDENTIFY YOUR NEEDS & PRICE---</h6>
+                <h5 style="font-family: 'Archivo Black', sans-serif;font-size:30px; ">One Solution For All Your
+                    <span style="font-family: 'Archivo Black', sans-serif;color:rgb(13, 114, 84);font-size:40px; ">Digital Needs</span></h5>
+                <h6 style="font-weight:bold; ">Whatever your digital needs, We will provide you the best services to grow your business</h6>
+            </div>
+        </div>
+
+        <!---ended identiy yours needs and price -->
+
+        <!-- section image and description -->
+        <div class="container-fluid ">
+            <div data-aos=" flip-down ">
+                <div class="row sm-row-cols-2 md-row-cols-4 d-flex flex-wrap ">
+                    <div class="col " style="padding:8px auto;margin:4px;display:flex;flex-direction:column;text-align:center;justify-content:center;box-shadow:-30px 30px 20px rgba(0,0,0,0.1);padding:20px 10px; border:2px solid grey;border-radius:10px; ">
+                        <div class="image "><img src="images/webrequirement.png " style="border:5px solid rgb(199, 197, 197); height:120px;width:120px; border-radius:50%;padding:15px; "></div>
+                        <div class="name " style="font-weight:bold; ">Web Development Package</div>
+                        <div class="para ">We, at S.A.I.T Solution and Trade Concern, utilizes high-quality technical tools such as WordPress, Laravel, CSS, Javascript, HTML My SQL, etc. in order to provide you better business solutions.</div>
+
+                    </div>
+
+                    <div class="col " style="padding:8px auto;margin:4px;display:flex;flex-direction:column;text-align:center;justify-content:center; box-shadow:-30px 30px 20px rgba(0,0,0,0.1);padding:20px 10px; border:2px solid grey;border-radius:10px; ">
+                        <div class="image "><img src="images/design.png " style="border:5px solid rgb(199, 197, 197); height:120px;width:120px; border-radius:50%;padding:15px; "> </div>
+                        <div class="name " style="font-weight:bold; ">Social Media Package</div>
+                        <div class="para ">We, at S.A.I.T Solution and Trade Concern, From data analysis, content creation, Search Engine Optimization for websites to social media marketing.</div>
+
+                    </div>
+
+                    <div class="col " style="padding:8px auto;margin:4px;display:flex;flex-direction:column;text-align:center;justify-content:center; box-shadow:-30px 30px 20px rgba(0,0,0,0.1);padding:20px 10px; border:2px solid grey;border-radius:10px; ">
+                        <div class="image "><img src="images/deploy.png " style="border:5px solid rgb(199, 197, 197); height:120px;width:120px; border-radius:50%;padding:15px; "></div>
+                        <div class="name " style="font-weight:bold; ">SEO Package</div>
+                        <div class="para ">We, at S.A.I.T Solution and Trade Concern, have one-stop solution for all the digital marketing services. From data analysis, content creation, Search Engine Optimization for websites to social media marketing.</div>
+
+                    </div>
+
+                    <div class="col " style="padding:8px auto;margin:4px;display:flex;flex-direction:column;text-align:center;justify-content:center;box-shadow:-30px 30px 20px rgba(0,0,0,0.1);padding:20px 10px; border:2px solid grey;border-radius:10px; ">
+                        <div class="image "><img src="images/qa.png " style="border:5px solid rgb(199, 197, 197); height:120px;width:120px; border-radius:50%;padding:15px; "></div>
+                        <div class="name " style="font-weight:bold; ">Quality Package</div>
+                        <div class="para ">We, at S.A.I.T Solution and Trade Concern, utilizes high-quality technical tools in order to provide you better business solutions.Be it desktop upgrade or server upgrade, we will provide services as and when your company requires.</div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- section ended image and description -->
+
+
+        <!-- footer started -->
+        <div data-aos="fade-up ">
+            <div class="container-fluid " style="background-color: aliceblue;padding:20px 60px; ">
+                <footer class="py-5 ">
+                    <div class="row ">
+                        <div class="col-6 col-md-2 mb-3 ">
+                            <h5>Section</h5>
+                            <ul class="nav flex-column ">
+                                <li class="nav-item mb-2 "><a href="# " class="nav-link p-0 text-muted ">Home</a></li>
+                                <li class="nav-item mb-2 "><a href="# " class="nav-link p-0 text-muted ">Features</a></li>
+                                <li class="nav-item mb-2 "><a href="# " class="nav-link p-0 text-muted ">Pricing</a></li>
+                                <li class="nav-item mb-2 "><a href="# " class="nav-link p-0 text-muted ">FAQs</a></li>
+                                <li class="nav-item mb-2 "><a href="# " class="nav-link p-0 text-muted ">About</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-6 col-md-2 mb-3 ">
+                            <h5>Section</h5>
+                            <ul class="nav flex-column ">
+                                <li class="nav-item mb-2 "><a href="# " class="nav-link p-0 text-muted ">Home</a></li>
+                                <li class="nav-item mb-2 "><a href="# " class="nav-link p-0 text-muted ">Features</a></li>
+                                <li class="nav-item mb-2 "><a href="# " class="nav-link p-0 text-muted ">Pricing</a></li>
+                                <li class="nav-item mb-2 "><a href="# " class="nav-link p-0 text-muted ">FAQs</a></li>
+                                <li class="nav-item mb-2 "><a href="# " class="nav-link p-0 text-muted ">About</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-6 col-md-2 mb-3 ">
+                            <h5>Section</h5>
+                            <ul class="nav flex-column ">
+                                <li class="nav-item mb-2 "><a href="# " class="nav-link p-0 text-muted ">Home</a></li>
+                                <li class="nav-item mb-2 "><a href="# " class="nav-link p-0 text-muted ">Features</a></li>
+                                <li class="nav-item mb-2 "><a href="# " class="nav-link p-0 text-muted ">Pricing</a></li>
+                                <li class="nav-item mb-2 "><a href="# " class="nav-link p-0 text-muted ">FAQs</a></li>
+                                <li class="nav-item mb-2 "><a href="# " class="nav-link p-0 text-muted ">About</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-md-5 offset-md-1 mb-3 ">
+                            <form>
+                                <h5>Subscribe to our newsletter</h5>
+                                <p>Monthly digest of what's new and exciting from us.</p>
+                                <div class="d-flex flex-column flex-sm-row w-100 gap-2 ">
+                                    <label for="newsletter1 " class="visually-hidden ">Email address</label>
+                                    <input id="newsletter1 " type="text " class="form-control " placeholder="Email address ">
+                                    <button class="btn btn-success " type="button ">Subscribe</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top ">
+                        <p>© 2023 <span style="font-weight: bold;color:rgb(5, 88, 63) "> S.A.I.T and Trade Company, Inc.</span> All rights reserved.</p>
+                        <ul class="list-unstyled d-flex ">
+                            <li class="ms-3 "><a class="link-dark " href="# "><svg class="bi " width="24 " height="24 "><use xlink:href="#twitter "></use></svg></a></li>
+                            <li class="ms-3 "><a class="link-dark " href="# "><svg class="bi " width="24 " height="24 "><use xlink:href="#instagram "></use></svg></a></li>
+                            <li class="ms-3 "><a class="link-dark " href="# "><svg class="bi " width="24 " height="24 "><use xlink:href="#facebook "></use></svg></a></li>
+                        </ul>
+                    </div>
+                </footer>
+            </div>
+        </div>
+        <!-- footer ended -->
+
+    </section>
+    <!-- section ending identiy yours needs and price -->
+
+
+
+    <!-- social media sticky position -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <!-- Main content here -->
+            </div>
+            <div class="col-md-3 fixed-bottom">
+                <ul class="social-icons">
+                    <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-google"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- social media sticky -->
+
+    <!-- scroll up to the top button -->
+    <button id="scroll-to-top-button" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+
+
+    <script>
+        var typed = new Typed('.text', {
+            strings: ['S.A.I.T and Trade Concern', ' Leading IT Company'],
+            typeSpeed: 150,
+            backspeed: 150,
+            loop: true, // Default value
+
+        });
+    </script>
+
+
+
+    <!-- fade effect js -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js "></script>
+
+    <script src="jquery.js "></script>
+    <script>
+        AOS.init({
+            offset: 200,
+            duration: 1000,
+            easing: 'ease-in-quad',
+            delay: 100,
+        });
+    </script>
+
+    <script>
+        // get the button
+
+        var scrollToTopButton = document.getElementById("scroll-to-top-button");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                scrollToTopButton.style.display = "block";
+            } else {
+                scrollToTopButton.style.display = "none";
+            }
+        };
+
+        // When the user clicks on the button, scroll to the top of the document
+        scrollToTopButton.addEventListener("click", function() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        });
+
+
+
+
+        // add an event listener to detect changes in screen width
+        window.addEventListener('resize', function() {
+            // get the current screen width
+            var screenWidth = window.innerWidth;
+
+            // check if the screen width is less than 768px
+            if (screenWidth < 768) {
+                // apply your desired behavior or styles here
+                window.alert("Screen width is less than 768px");
+                var scrollToTopButton = document.getElementById("scroll-to-top-button");
+
+                // When the user scrolls down 20px from the top of the document, show the button
+                window.onscroll = function() {
+                    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                        scrollToTopButton.style.display = "block";
+                    } else {
+                        scrollToTopButton.style.display = "none";
+                    }
+                };
+
+                // When the user clicks on the button, scroll to the top of the document
+                scrollToTopButton.addEventListener("click", function() {
+                    // scroll to the top of the document using smooth scrolling
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                });
+            } else {
+                // apply your desired behavior or styles here for screen width greater than or equal to 768px
+
+            }
+        });
+    </script>
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js " integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM " crossorigin="anonymous ">
+    </script> -->
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js " integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p " crossorigin="anonymous "></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js " integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF " crossorigin="anonymous "></script>
+
+</body>
+
+</html>

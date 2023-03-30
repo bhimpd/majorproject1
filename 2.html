@@ -1,0 +1,654 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- font awesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- flickity effect -->
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+
+
+    <!-- Aos effect -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- hover effect -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.2/css/bootstrap.min.css" integrity="sha512-fzgbboB1wEanpwugmWkmqlpXtYeiYtI/iQrJxLn3AqUVaGOFliIwDyRlA1k8OcXPLl+07BojQ2xJZgsRe3tJEA==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <!-- moving effect to the image -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- typing effect to the text -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="typed.js"></script>
+    <title>Services</title>
+</head>
+<style>
+    * {
+        padding: 0px;
+        margin: 0px;
+        box-sizing: border-box;
+        font-family: 'poppins', sans-serif;
+    }
+    
+    body {
+        background-color: rgb(243, 243, 239);
+    }
+    
+    .services_lists {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    
+    .inner_services {
+        border: 2px solid grey;
+        margin: 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        border-radius: 5px;
+    }
+    
+    .inner_services:hover {
+        transform: scale(1.04);
+        cursor: pointer;
+    }
+    
+    .our_services {
+        font-weight: bolder;
+        text-align: center;
+    }
+    
+    .services_lists .inner_services .icon_image i {
+        font-size: 30px;
+    }
+    
+    .autoplay li img {
+        height: 200px;
+        width: 200px;
+        border-radius: 8px;
+        padding: 10px;
+        border: 2px solid grey;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .fa-solid {
+        cursor: pointer;
+    }
+    
+    @media (max-width: 1139.98px) {
+        .quick .container {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+    
+    .navbar {
+        font-family: 'Roboto', sans-serif;
+        /* font-size: 20px; */
+        font-weight: bold;
+    }
+    
+    .navbar-nav .nav-item a:hover {
+        text-decoration: underline;
+        color: rgb(12, 221, 82);
+    }
+    
+    .container-fluid .container .row .col .card:hover {
+        /* background-color: rgb(34, 192, 184); */
+        color: #053b3d;
+        /* transition: background-color 2s ease; */
+        transform: scale(1.02);
+        /* transition: transform 1.005s ease; */
+    }
+    
+    .text {
+        color: rgb(11, 124, 94);
+        font-weight: bold;
+        font-size: 25px;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    }
+    
+    .navbar .container-fluid .collapse ul li .container {
+        display: none;
+    }
+    
+    .navbar .container-fluid .collapse ul li #about.container {
+        position: realtive;
+        z-index: 1;
+    }
+    
+    .navbar .container-fluid .collapse .row .col .inform p {
+        font-weight: lighter;
+    }
+    
+    .navbar .container-fluid .collapse .row .col .inform h6 {
+        font-weight: bold;
+        padding: 10px 2px;
+    }
+    
+    .navbar .container-fluid .collapse ul li:hover .container {
+        position: absolute;
+        background-color: rgb(214, 216, 218);
+        /* top: 50px; */
+        left: 50px;
+        z-index: 2;
+        display: block;
+    }
+    
+    #crc .row .col:hover {
+        transform: scale(1.03);
+        cursor: pointer;
+        transition: all 0.1s ease;
+    }
+    
+    @media (max-width: 575.98px) {
+        .navbar .container-fluid .collapse ul li:hover .container {
+            position: static;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+    }
+    
+    @media (max-width: 1139.98px) {
+        .modal .container {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+    
+    #crc .row .col {
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+        padding: 20px 18px;
+        margin: 12px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    @media (max-width: 798.98px) {
+        #crc .row .col {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+        }
+        #crc .row {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+        }
+    }
+</style>
+
+<body>
+
+    <!-- navbar started -->
+
+    <!-- add fixed-top for sticky purpose -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><img src="images/logo.png " height="50px " width="100px "></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item ">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" id="about" href="# ">About Us</a>
+
+                        <!-- adding extra class on adding eventlistener -->
+                        <div class="container text-center" id="container">
+                            <div class=" row ">
+                                <div class="col " style="margin:4px;padding:10px 8px;border-right:1px solid grey; ">
+                                    <div class="inform ">
+                                        <h6 style="margin:1px 3px;">
+                                            <a href="intro.html"> Introduction</a> </h6>
+                                        <p>S.A.I.T Solution and Trade Concern is a revenue-based project company specializing in the IT sector.</p>
+                                    </div>
+
+
+                                </div>
+                                <div class="col " style="margin:4px;padding:10px 8px;border-right:1px solid grey; ">
+                                    <div class="inform ">
+                                        <h6 style="margin:1px 3px; ">
+                                            How we work</h6>
+                                        <p>S.A.I.T Solution and Trade Concern works as group in different sectors.</p>
+                                    </div>
+                                </div>
+                                <div class="col " style="margin:4px;padding:10px 8px;border-right:1px solid grey; ">
+                                    <div class="inform ">
+                                        <h6 style="margin:1px 3px; ">Our Activities</h6>
+                                        <p>S.A.I.T Solution and Trade Concern provides various services in different It fields</p>
+                                    </div>
+                                </div>
+                                <div class="col " style="margin:4px;padding:10px 8px; ">
+                                    <div class="inform ">
+                                        <h6 style="margin:1px 3px; "> Our Team
+                                        </h6>
+                                        <p>S.A.I.T Solution and Trade Concern has great energetic, creative ,highly enthaustic employee working in different sectors.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ending  adding extra class on adding eventlistener -->
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link active" aria-current="page" href="service.html ">Service</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link " href="port.html">Portfolio</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link " href="contact.html" tabindex="-1 ">Contact Us</a>
+                    </li>
+                    <!-- <li class="nav-item ">
+                        <a class="nav-link disabled " href="# " tabindex="-1 " aria-disabled="true ">Disabled</a>
+                    </li> -->
+                </ul>
+                <form class="d-flex ">
+                    <!-- <input class=" form-control me-2 " type="search " placeholder="Search " aria-label="Search "> -->
+                    <button class="btn btn-outline-success" data-bs-target="#mymodal" data-bs-toggle="modal" type="button">Quick Enquiry</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <!-- navbar ended -->
+
+    <!-- quick button display and hide -->
+    <!-- Modal -->
+    <div class="modal fade" id="mymodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" style="max-width:95%">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <!-- <h5 class="modal-title" id="exampleModalLabel">Modal title</h5> -->
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="container d-flex">
+
+                        <div class="container ">
+                            <div class="row " style="flex-direction:column; ">
+                                <p>WE WOULD LOVE TO HEAR FROM YOUR---</p>
+                                <h4>GET IN TOUCH</h4>
+                                <div class=" col-md-6 d-flex align-items-center " style="margin-bottom:20px;padding-bottom:20px; ">
+                                    <i class=" fa-solid fa-location-dot " style=" font-size: xx-large; border:2px solid rgb(3, 114, 49); padding:10px 12px; "></i>
+                                    <address style="display:flex;flex-direction:column;margin-bottom:0px;margin-left:6px;border-bottom:1px solid grey; ">
+                                    <strong>Office Address</strong>
+                                    <p>0 K.M, Pokhar, Nepal</p>
+                                </address>
+                                </div>
+                                <div class=" col-md-6 d-flex align-items-center " style=" margin-bottom:20px;padding-bottom:20px; ">
+                                    <i class=" fa-solid fa-envelope " style=" font-size: xx-large; border:2px solid rgb(3, 114, 49); padding:10px 12px; "></i>
+                                    <address style="display:flex;flex-direction:column;margin-bottom:0px; margin-left:6px;border-bottom:1px solid grey; ">
+                                    <strong>For Sales & Quotation Requests</strong>
+                                    <p>info@sait.com.np</p>
+                                </address>
+                                </div>
+                                <div class=" col-md-6 d-flex align-items-center " style="margin-bottom:20px;padding-bottom:20px; ">
+                                    <i class=" fa-solid fa-phone-volume " style=" font-size: xx-large; border:2px solid rgb(3, 114, 49); padding:10px 12px; "></i>
+                                    <address style="display:flex;flex-direction:column;margin-bottom:0px; margin-left:6px;border-bottom:1px solid grey; ">
+                                    <strong>For Sales & Quotation Requests</strong>
+                                    <p>+9779801067391, +9779802835022,</p>
+                                </address>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- form started here -->
+                        <form action=" ">
+                            <div class="form ">
+                                <div class="texts " style="justify-content: center;align-items:center; ">
+                                    <h5 style="font-weight: bold; ">HAVE A PROJECT IN MIND?---</h5>
+                                    <h3>Tell Us
+                                        <span style="color:rgb(3, 114, 49);font-family: 'Shrikhand', cursive; font-weight: light; ">A Bit More.</span>
+                                    </h3>
+                                </div>
+                                <div class="row " style="margin:10px 5px; ">
+                                    <div class="col ">
+                                        <input type="text " class="form-control " placeholder="First name " aria-label="First name ">
+                                    </div>
+                                    <div class="col ">
+                                        <input type="text " class="form-control " placeholder="Last name " aria-label="Last name ">
+                                    </div>
+                                </div>
+                                <div class="row " style="margin:10px 5px; ">
+                                    <div class="col ">
+                                        <input type="number " class="form-control " placeholder="Number " aria-label="Number ">
+                                    </div>
+                                    <div class="col ">
+                                        <input type="email " class="form-control " placeholder="email " aria-label="Email ">
+                                    </div>
+                                </div>
+                                <div class="row " style="margin:10px 5px; ">
+                                    <div class="col ">
+                                        <input type="text " class="form-control " placeholder="Address " aria-label="address ">
+                                    </div>
+                                    <div class="col ">
+                                        <input type="text " class="form-control " placeholder="Your Interest " aria-label="interest ">
+                                    </div>
+                                </div>
+                                <div class="mb-3 ">
+
+                                    <textarea class="form-control " placeholder="Write a Message... " id="exampleFormControlTextarea1 " rows="5 "></textarea>
+                                </div>
+
+                            </div>
+                            <div class="submitbtn " style="align-items:center;display:flex;justify-content: center;text-align:center; ">
+                                <button type="button" class="btn btn-primary">Submit</button>
+                            </div>
+                        </form>
+                        <!-- form ended here -->
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- quick enquiry button display and hide -->
+
+
+
+
+
+
+    <!-- join us texts   and services-->
+    <div data-aos="zoom-out-up">
+        <div class="text" style="margin-top:76px;display:flex;align-items:center;justify-content:center;flex-direction:column;flex-wrap:wrap;">
+            <p>---Lets Join Us---</p>
+            <strong style="font-size:45px;">Our <span style="font-size:45px;color:rgb(0, 0, 0);">Job Vacancy</span></strong>
+        </div>
+    </div>
+
+    <div class="container" id="crc">
+        <div data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
+            <div class="row ">
+
+                <div class="col">
+                    <strong>Laravel Developer</strong>
+                    <p>Functional Title: Developer Team</p>
+                    <p>Corporate Title: Developer Team</p>
+                    <p>No. of Vacancies: 1</p>
+                    <p>Posted date : Dec 15, 2022</p>
+
+                </div>
+
+
+                <div class="col">
+                    <strong>Software QA</strong>
+                    <p>Functional Title: Developer Team</p>
+                    <p>Corporate Title: Developer Team</p>
+                    <p>No. of Vacancies: 1</p>
+                    <p>Posted date : Dec 15, 2022</p>
+                </div>
+
+
+                <div class="col">
+                    <strong>Content Writer</strong>
+                    <p>Functional Title: Developer Team</p>
+                    <p>Corporate Title: Developer Team</p>
+                    <p>No. of Vacancies: 1</p>
+                    <p>Posted date : Dec 15, 2022</p>
+                </div>
+
+
+            </div>
+            <div class="row ">
+                <div class="col">
+                    <strong>Graphics and Motion Graphics</strong>
+                    <p>Functional Title: Developer Team</p>
+                    <p>Corporate Title: Developer Team</p>
+                    <p>No. of Vacancies: 1</p>
+                    <p>Posted date : Dec 15, 2022</p>
+
+                </div>
+
+                <div class="col">
+                    <strong>React Developer</strong>
+                    <p>Functional Title: Developer Team</p>
+                    <p>Corporate Title: Developer Team</p>
+                    <p>No. of Vacancies: 1</p>
+                    <p>Posted date : Dec 15, 2022</p>
+                </div>
+
+                <div class="col">
+                    <strong>Flutter Developer</strong>
+                    <p>Functional Title: Developer Team</p>
+                    <p>Corporate Title: Developer Team</p>
+                    <p>No. of Vacancies: 1</p>
+                    <p>Posted date : Dec 15, 2022</p>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+    <!-- ended join us texts   and services-->
+
+
+    <!-- services and nab tab -->
+    <div class="our_services">
+        <h1>Our Services</h1>
+        <p>We provide the following Services</p>
+    </div>
+    <div class="services_lists">
+        <div class="inner_services">
+            <div class="icon_image"><i class="fa-sharp fa-solid fa-network-wired"></i></div>
+            <div class="service_name">Network Services</div>
+        </div>
+        <div class="inner_services">
+            <div class="icon_image"><i class="fa-brands fa-uncharted"></i></div>
+            <div class="service_name">Software Services</div>
+        </div>
+        <div class="inner_services">
+            <div class="icon_image"><i class="fa-solid fa-server"></i></div>
+            <div class="service_name">Hardware Services</div>
+        </div>
+        <div class="inner_services">
+            <div class="icon_image"><i class="fa-solid fa-earth-americas"></i></div>
+            <div class="service_name">Web Development</div>
+        </div>
+        <div class="inner_services">
+            <div class="icon_image"><i class="fa-sharp fa-solid fa-gamepad"></i></div>
+            <div class="service_name">Web Hosting</div>
+        </div>
+    </div>
+
+
+    <!-- services and nab tab ends here -->
+
+
+    <!-- nab tab -->
+    <div class="container">
+        <ul class="nav-tabs nav nav-justified">
+            <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#active" data-toggle="tab">Active</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#da" data-toggle="tab">deactive</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#link" data-toggle="tab">Link</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" data-toggle="tab">Disabled</a>
+            </li>
+
+
+        </ul>
+        <div class="tab-content container">
+            <div class="tab_pane active" id="active">
+                <h2>we are at home</h2>
+            </div>
+            <div class="tab_pane" id="da">
+                <h2>we are at deactive mood..</h2>
+            </div>
+            <div class="tab_pane" id="link">
+                <h2>we are linked..</h2>
+            </div>
+
+        </div>
+    </div>
+    <!-- nab tab ends here -->
+
+
+
+    <!-- our happy clients -->
+    <h1 style="font-size:35px;text-align:center;margin:50px 0px 50px 0px;font-weight: bolder;color:#053b3d;">Our Happy Clients</h1>
+    <div class="autoplay" style="margin:30px">
+        <li><img src="images/webrequirement.png"> </li>
+        <li><img src="images/adidas.png"> </li>
+        <li><img src="images/website/w1.png"> </li>
+        <li><img src="images/mobile/m3.png"> </li>
+        <li><img src="images/laptop/laptop1.png"> </li>
+        <li><img src="images/website/w3.png"> </li>
+        <li><img src="images/mobile/m2.png"> </li>
+        <li><img src="images/laptop/laptop2.png"> </li>
+        <li><img src="images/website/w2.png"> </li>
+        <li><img src="images/mobile/m5.png"> </li>
+    </div>
+    <!-- happy client ended here -->
+
+
+    <!-- section starting IDENTIFY YOUR NEEDS & PRICE -->
+    <div data-aos=" fade-up ">
+        <section style="background-color: rgb(214, 216, 218); ">
+
+
+
+            <!-- footer started -->
+            <div class="container-fluid " style="background-color: aliceblue;padding:20px 60px; ">
+                <footer class="py-5 ">
+                    <div class="row ">
+                        <div class="col-6 col-md-2 mb-3 ">
+                            <h5>Section</h5>
+                            <ul class="nav flex-column ">
+                                <li class="nav-item mb-2 "><a href="# " class="nav-link p-0 text-muted ">Home</a></li>
+                                <li class="nav-item mb-2 "><a href="# " class="nav-link p-0 text-muted ">Features</a></li>
+                                <li class="nav-item mb-2 "><a href="# " class="nav-link p-0 text-muted ">Pricing</a></li>
+                                <li class="nav-item mb-2 "><a href="# " class="nav-link p-0 text-muted ">FAQs</a></li>
+                                <li class="nav-item mb-2 "><a href="# " class="nav-link p-0 text-muted ">About</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-6 col-md-2 mb-3 ">
+                            <h5>Section</h5>
+                            <ul class="nav flex-column ">
+                                <li class="nav-item mb-2 "><a href="# " class="nav-link p-0 text-muted ">Home</a></li>
+                                <li class="nav-item mb-2 "><a href="# " class="nav-link p-0 text-muted ">Features</a></li>
+                                <li class="nav-item mb-2 "><a href="# " class="nav-link p-0 text-muted ">Pricing</a></li>
+                                <li class="nav-item mb-2 "><a href="# " class="nav-link p-0 text-muted ">FAQs</a></li>
+                                <li class="nav-item mb-2 "><a href="# " class="nav-link p-0 text-muted ">About</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-6 col-md-2 mb-3 ">
+                            <h5>Section</h5>
+                            <ul class="nav flex-column ">
+                                <li class="nav-item mb-2 "><a href="# " class="nav-link p-0 text-muted ">Home</a></li>
+                                <li class="nav-item mb-2 "><a href="# " class="nav-link p-0 text-muted ">Features</a></li>
+                                <li class="nav-item mb-2 "><a href="# " class="nav-link p-0 text-muted ">Pricing</a></li>
+                                <li class="nav-item mb-2 "><a href="# " class="nav-link p-0 text-muted ">FAQs</a></li>
+                                <li class="nav-item mb-2 "><a href="# " class="nav-link p-0 text-muted ">About</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-md-5 offset-md-1 mb-3 ">
+                            <form>
+                                <h5>Subscribe to our newsletter</h5>
+                                <p>Monthly digest of what's new and exciting from us.</p>
+                                <div class="d-flex flex-column flex-sm-row w-100 gap-2 ">
+                                    <label for="newsletter1 " class="visually-hidden ">Email address</label>
+                                    <input id="newsletter1 " type="text " class="form-control " placeholder="Email address ">
+                                    <button class="btn btn-success " type="button ">Subscribe</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top ">
+                        <p>© 2023 <span style="font-weight: bold;color:rgb(5, 88, 63) "> S.A.I.T and Trade Company, Inc.</span> All rights reserved.</p>
+                        <ul class="list-unstyled d-flex ">
+                            <li class="ms-3 "><a class="link-dark " href="# "><svg class="bi " width="24 " height="24 "><use xlink:href="#twitter "></use></svg></a></li>
+                            <li class="ms-3 "><a class="link-dark " href="# "><svg class="bi " width="24 " height="24 "><use xlink:href="#instagram "></use></svg></a></li>
+                            <li class="ms-3 "><a class="link-dark " href="# "><svg class="bi " width="24 " height="24 "><use xlink:href="#facebook "></use></svg></a></li>
+                        </ul>
+                    </div>
+                </footer>
+            </div>
+
+            <!-- footer ended -->
+
+        </section>
+    </div>
+    <!-- section ending identiy yours needs and price -->
+
+
+
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js " integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM " crossorigin="anonymous "></script> -->
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js " integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin=" anonymous " referrerpolicy="no-referrer "></script>
+    <script type="text/javascript " src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js "></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js " integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p " crossorigin="anonymous "></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js " integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF " crossorigin="anonymous "></script>
+
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js "></script>
+    $('.main-carousel').flickity({ // options cellAlign: 'left', contain: true });
+    <script>
+        AOS.init({
+            offset: 200,
+            duration: 1000,
+            easing: 'ease-in-quad',
+            delay: 100,
+        });
+    </script>
+    <script>
+        $('.autoplay').slick({
+            slidesToShow: 5,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 2000,
+        });
+    </script>
+</body>
+
+</html>
+
+</html>
+
+</html>
